@@ -1,0 +1,13 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    align-items: center;
+}
+
+.link {
+    color: white !important;
+    text-decoration: none !important;
+}

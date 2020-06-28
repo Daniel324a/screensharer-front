@@ -1,0 +1,18 @@
+#screen {
+    width: 800px;
+    height: 400px;
+    margin: 10px !important;
+}
+
+.container {
+    margin: 10px !important;
+}
+
+.button {
+    margin: 5px !important;
+}
+
+.accessCode {
+    width: 570px !important;
+    margin-right: 10px !important;
+}
