@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 
-export const fetchLogin = (params, action) => {
-	const res = fetch('https://sshare-backend.herokuapp.com/login', {
+export const fetchSignIn = (params, action) => {
+	const res = fetch('https://sshare-backend.herokuapp.com/signin', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -14,13 +14,12 @@ export const fetchLogin = (params, action) => {
 		.then(data => {
 			data.ok
 				? Swal.fire({
-						title: 'Log In Succesfully!',
-						icon: 'success',
-						showConfirmButton: false,
-						timer: 600,
+					title: "User Created!",
+					icon: "success",
+					confirmButtonText: "Continue",
 				  }).then(action)
 				: Swal.fire({
-						title: 'Log In Failed!',
+						title: 'SigIn Failed!',
 						icon: 'error',
 						confirmButtonText: 'Continue',
 				  });

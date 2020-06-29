@@ -1,17 +1,17 @@
 //React Imports
 import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
-import ScreenShareIcon from '@material-ui/icons/ScreenShare';
+import { Redirect } from 'react-router-dom';
 //Proyect Imports
-import { fetchLogin } from '../../helpers/fetchLogin';
+import { fetchSignIn } from '../../helpers/fetchSignIn';
 //Styles
-import './login_form.scss';
+import './SignInForm.scss';
 import { useForm } from '../../hooks/useForm';
 
-const LogInForm = () => {
+//Component
+export const SignInForm = () => {
 	//Hooks
 	const [form, handleInputChange] = useForm({
 		user: '',
@@ -21,24 +21,32 @@ const LogInForm = () => {
 	const [redirect, setRedirect] = useState({});
 
 	//Methods
-	const { email, password } = form;
-	const loginHandler = () => {
-		fetchLogin(form, () => {
-			sessionStorage.setItem('email', email);
-			setRedirect({ route: '/options' });
-		});
+	const { user, email, password } = form;
+
+	const signInHandler = () => {
+		fetchSignIn(form, () =>
+			setRedirect({ route: '/screen' })
+		);
 	};
 
 	if (redirect.route)
 		return <Redirect from='' to={redirect} />;
 	return (
 		<center>
-			<Card className='form' elevation={3}>
+			<Card className='form'>
 				<br />
-				<ScreenShareIcon className='icon' />
 				<form>
 					<TextField
-						className='mt-10'
+						className='mt-5'
+						fullWidth
+						label='User'
+						name='user'
+						onChange={handleInputChange}
+						type='text'
+						value={user}
+					/>
+					<TextField
+						className='mt-5'
 						fullWidth
 						label='Email'
 						name='email'
@@ -46,8 +54,9 @@ const LogInForm = () => {
 						type='email'
 						value={email}
 					/>
+
 					<TextField
-						className='mt-10'
+						className='mt-5'
 						fullWidth
 						label='Password'
 						name='password'
@@ -55,21 +64,18 @@ const LogInForm = () => {
 						type='password'
 						value={password}
 					/>
+
 					<Button
-						variant='contained'
-						onClick={loginHandler}
 						className='mt-20 mb-10'
 						color='primary'
+						onClick={signInHandler}
+						variant='contained'
 					>
-						Log In
+						Sign In
 					</Button>
-					<br />
-					you don't have an account yet? <br />
-					<Link to='/signin'>Create one now!</Link>
 				</form>
 				<br />
 			</Card>
 		</center>
 	);
 };
-export { LogInForm };

@@ -9,7 +9,7 @@ import {
 //Proyect Imports
 import Share from './views/ShareScreen/share';
 import { Login } from './views/Login/Login';
-import SignInForm from './components/SignInForm/signin_form';
+import { SignIn } from './views/SignIn/SignIn';
 import Options from './views/Options/options';
 import NavBar from './components/Navbar/navbar';
 import Connect from './views/Connect/connect.js';
@@ -23,7 +23,7 @@ const App = () => {
 			<div className='App'>
 				<Switch>
 					<Route path='/login' component={Login} />
-					<Route path='/signin' component={SignInForm} />
+					<Route path='/signin' component={SignIn} />
 					<Route
 						path='/connect'
 						exact
