@@ -30,7 +30,7 @@ const LogInForm = () => {
 	};
 
 	if (redirect.route)
-		return <Redirect from='' to={redirect} />;
+		return <Redirect from='' to={redirect.route} />;
 	return (
 		<center>
 			<Card className='form' elevation={3}>
@@ -67,7 +67,6 @@ const LogInForm = () => {
 					you don't have an account yet? <br />
 					<Link to='/signin'>Create one now!</Link>
 				</form>
-				<br />
 			</Card>
 		</center>
 	);

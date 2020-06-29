@@ -10,7 +10,7 @@ import {
 import Share from './views/ShareScreen/share';
 import { Login } from './views/Login/Login';
 import { SignIn } from './views/SignIn/SignIn';
-import Options from './views/Options/options';
+import { Options } from './views/Options/Options';
 import NavBar from './components/Navbar/navbar';
 import Connect from './views/Connect/connect.js';
 import Stream from './views/Connect/stream.js';
@@ -43,7 +43,7 @@ const App = () => {
 						render={props => <Options {...props} />}
 					/>
 				</Switch>
-				<Redirect from='' to='/login' />
+				<Redirect from='' to='/options' />
 			</div>
 		</BrowserRouter>
 	);
