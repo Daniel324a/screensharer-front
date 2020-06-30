@@ -7,11 +7,11 @@ import {
 	Redirect,
 } from 'react-router-dom';
 //Proyect Imports
-import Share from './views/ShareScreen/share';
+import { Share } from './views/Share/Share';
 import { Login } from './views/Login/Login';
 import { SignIn } from './views/SignIn/SignIn';
 import { Options } from './views/Options/Options';
-import NavBar from './components/Navbar/navbar';
+import { Navbar } from './components/Navbar/Navbar';
 import Connect from './views/Connect/connect.js';
 import Stream from './views/Connect/stream.js';
 
@@ -19,7 +19,7 @@ import Stream from './views/Connect/stream.js';
 const App = () => {
 	return (
 		<BrowserRouter>
-			<NavBar />
+			<Navbar />
 			<div className='App'>
 				<Switch>
 					<Route path='/login' component={Login} />
