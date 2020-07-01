@@ -1,2 +1,0 @@
-(this["webpackJsonpscreensharer-front"]=this["webpackJsonpscreensharer-front"]||[]).push([[0],{3:function(e,n,r){e.exports=r(8)},8:function(e,n,r){"use strict";r.r(n);var t=r(0),s=r.n(t),c=r(2),o=function(){return s.a.createElement("p",null,"App")};r.n(c).a.render(s.a.createElement(o,null),document.getElementById("root"))}},[[3,1,2]]]);
-//# sourceMappingURL=main.9aa502b3.chunk.js.map
