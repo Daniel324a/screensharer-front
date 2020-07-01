@@ -13,7 +13,7 @@ export const Options = () => {
 				<OptionCard
 					title='Share your screen'
 					description='You can share your screen with an access code.'
-					src='./img/screen.svg'
+					src='../img/screen.svg'
 					route={{
 						pathname: '/screen',
 						state: { access_code: getAccessCode() },
@@ -22,7 +22,7 @@ export const Options = () => {
 				<OptionCard
 					title='Connect to a screen'
 					description='You can connect to another screen with an access code.'
-					src='./img/share.svg'
+					src='../img/share.svg'
 					route='/connect'
 				/>
 			</div>
